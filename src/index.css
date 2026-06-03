@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Luxury Gold & Dark Theme Colors - AS Wear Co. Theme */
+:root {
+  --color-primary-gold: #D4AF37;
+  --color-dark-gold: #B8962E;
+  --color-black-bg: #0D0D0D;
+  --color-dark-gray: #1A1A1A;
+  --color-accent-red: #C41E3A;
+  --color-light-silver: #C0C0C0;
+  --color-metallic-silver: #E5E4E2;
+  --color-white-text: #FFFFFF;
+}
+
+/* Custom tailwind color overrides */
+@layer components {
+  .bg-gold { @apply !bg-[#D4AF37]; }
+  .bg-dark-gold { @apply !bg-[#B8962E]; }
+  .bg-black-custom { @apply !bg-[#0D0D0D]; }
+  .bg-dark-gray-custom { @apply !bg-[#1A1A1A]; }
+  .bg-accent-red { @apply !bg-[#C41E3A]; }
+  .bg-light-silver { @apply !bg-[#C0C0C0]; }
+  .bg-metallic-silver { @apply !bg-[#E5E4E2]; }
+  
+  .text-gold { @apply !text-[#D4AF37]; }
+  .text-dark-gold { @apply !text-[#B8962E]; }
+  .text-black-custom { @apply !text-[#0D0D0D]; }
+  .text-dark-gray-custom { @apply !text-[#1A1A1A]; }
+  .text-accent-red { @apply !text-[#C41E3A]; }
+  .text-light-silver { @apply !text-[#C0C0C0]; }
+  .text-metallic-silver { @apply !text-[#E5E4E2]; }
+  
+  .border-gold { @apply !border-[#D4AF37]; }
+  .border-dark-gold { @apply !border-[#B8962E]; }
+  .border-accent-red { @apply !border-[#C41E3A]; }
+  .border-metallic-silver { @apply !border-[#E5E4E2]; }
+  
+  .ring-gold { @apply !ring-[#D4AF37]; }
+  .ring-accent-red { @apply !ring-[#C41E3A]; }
+  
+  /* Gradient utilities */
+  .from-gold { @apply !from-[#D4AF37]; }
+  .to-gold { @apply !to-[#D4AF37]; }
+  .from-dark-gold { @apply !from-[#B8962E]; }
+  .to-dark-gold { @apply !to-[#B8962E]; }
+  .from-accent-red { @apply !from-[#C41E3A]; }
+  .to-accent-red { @apply !to-[#C41E3A]; }
+  .from-metallic-silver { @apply !from-[#E5E4E2]; }
+  .to-metallic-silver { @apply !to-[#E5E4E2]; }
+}

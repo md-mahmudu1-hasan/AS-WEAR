@@ -1,0 +1,206 @@
+import React, { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import {
+  FiMail,
+  FiArrowLeft,
+  FiCheckCircle,
+  FiRefreshCw,
+} from "react-icons/fi";
+import useAuth from "../Hook/UseAuth";
+import useAxios from "../Hook/useAxios";
+import toast from "react-hot-toast";
+
+const EmailVerification = () => {
+  const [verificationCode, setVerificationCode] = useState([
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ]);
+  const [isVerified, setIsVerified] = useState(false);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { createUser } = useAuth();
+  const axiosInstance = useAxios();
+
+  console.log(location);
+
+  const handleInputChange = (index, value) => {
+    // Only allow numbers
+    if (value && !/^\d$/.test(value)) return;
+
+    const newCode = [...verificationCode];
+    newCode[index] = value;
+    setVerificationCode(newCode);
+
+    // Auto-focus next input
+    if (value && index < 5) {
+      const nextInput = document.getElementById(`code-input-${index + 1}`);
+      if (nextInput) nextInput.focus();
+    }
+
+    // Clear error when user starts typing
+    if (error) setError("");
+  };
+
+  const handleKeyDown = (index, e) => {
+    // Handle backspace
+    if (e.key === "Backspace" && !verificationCode[index] && index > 0) {
+      const prevInput = document.getElementById(`code-input-${index - 1}`);
+      if (prevInput) prevInput.focus();
+    }
+  };
+
+  const handlePaste = (e) => {
+    e.preventDefault();
+    const pastedData = e.clipboardData.getData("text").trim();
+
+    // Check if pasted content is 6 digits
+    if (/^\d{6}$/.test(pastedData)) {
+      const digits = pastedData.split("");
+      setVerificationCode(digits);
+      document.getElementById(`code-input-5`)?.focus();
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const code = verificationCode.join("");
+
+    if (code.length !== 6) {
+      setError("Please enter all 6 digits");
+      return;
+    }
+    try {
+      const response = await axiosInstance.post("/verify-otp", {
+        email: location?.state?.email,
+        otp: code,
+      });
+
+      if (response.status === 200) {
+        setIsVerified(true);
+        await createUser(location?.state?.email, location?.state?.password);
+        await axiosInstance.post("/userinfo", {
+          email: location?.state?.email,
+          name: location?.state?.name,
+          phone: location?.state?.phone,
+          address: location?.state?.address,
+        });
+        toast.success("Email verified successfully!");
+        navigate("/");
+      }
+    } catch (err) {
+      setError("Invalid or expired code. Please try again.");
+    }
+  };
+
+  if (isVerified) {
+    return (
+      <div className="min-h-screen bg-linear-to-br from-green-50 via-orange-50 to-green-50 flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+        <div className="max-w-md w-full">
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 text-center">
+            <div className="mx-auto h-20 w-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+              <FiCheckCircle className="h-10 w-10 text-green-600" />
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              Email Verified!
+            </h2>
+            <p className="text-gray-600 mb-6">
+              Your email has been successfully verified. Redirecting to home
+              page...
+            </p>
+            <div className="flex justify-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-linear-to-br from-green-50 via-orange-50 to-green-50 flex items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        {/* Header */}
+        <div className="text-center">
+          <div className="mx-auto h-20 w-20 bg-linear-to-r from-green-600 to-orange-600 rounded-full flex items-center justify-center mb-6">
+            <FiMail className="h-10 w-10 text-white" />
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+            Verify Your Email
+          </h2>
+          <p className="text-gray-600">
+            We've sent a 6-digit verification code to your email address
+          </p>
+        </div>
+
+        {/* Form Card */}
+        <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* 6-Digit Code Input */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-4 text-center">
+                Enter Verification Code
+              </label>
+              <div className="flex justify-center space-x-2">
+                {verificationCode.map((digit, index) => (
+                  <input
+                    key={index}
+                    id={`code-input-${index}`}
+                    type="text"
+                    maxLength={1}
+                    value={digit}
+                    onChange={(e) => handleInputChange(index, e.target.value)}
+                    onKeyDown={(e) => handleKeyDown(index, e)}
+                    onPaste={index === 0 ? handlePaste : undefined}
+                    className={`w-12 h-12 text-center text-lg font-semibold border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-200 ${
+                      error
+                        ? "border-red-300 text-red-600"
+                        : "border-gray-300 text-gray-900"
+                    }`}
+                    inputMode="numeric"
+                    pattern="[0-9]*"
+                  />
+                ))}
+              </div>
+              {error && (
+                <p className="mt-2 text-sm text-red-600 text-center">{error}</p>
+              )}
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-linear-to-r from-green-600 to-orange-600 hover:from-green-700 hover:to-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-300 transform hover:scale-105"
+            >
+              Verify Email
+            </button>
+          </form>
+
+          {/* Resend Code */}
+          <div className="mt-6 text-center">
+            <p className="text-sm text-gray-600 mb-2">
+              Didn't receive the code?
+            </p>
+          </div>
+
+          {/* Back to Login */}
+          <div className="mt-6 text-center">
+            <Link
+              to="/login"
+              className="flex items-center justify-center text-sm text-green-600 hover:text-green-700 font-medium transition-colors"
+            >
+              <FiArrowLeft className="mr-2 h-4 w-4" />
+              Back to Login
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default EmailVerification;

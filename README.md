@@ -1,4 +1,4 @@
-# Live Link : https://aswear.netlify.app/
+# Live Link : https://aseverythingshop.netlify.app/
 
 
 # E-Comarce Frontend

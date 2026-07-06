@@ -171,7 +171,7 @@ const Payment = () => {
                       <p>
                         • Send money to:{" "}
                         <span className="text-gold font-semibold">
-                          017XXXXXXXX
+                          01719465594
                         </span>
                       </p>
                       <p>
@@ -188,7 +188,7 @@ const Payment = () => {
                       <p>
                         • Send money to:{" "}
                         <span className="text-gold font-semibold">
-                          018XXXXXXXX
+                          01719465594
                         </span>
                       </p>
                       <p>

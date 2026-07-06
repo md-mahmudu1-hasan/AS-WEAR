@@ -23,7 +23,7 @@ const HeroSlider = () => {
     { 
       src: "/1.jpg.jpeg", 
       title: "New Collection",
-      subtitle: "Summer 2024",
+      subtitle: "Summer 2026",
       description: "Discover the latest trends in fashion",
       badge: "NEW",
       badgeColor: "gold"
@@ -91,7 +91,7 @@ const HeroSlider = () => {
                         to="/all-clothes"
                         className="inline-flex items-center space-x-2 bg-linear-to-r from-gold to-dark-gold text-black-custom px-8 py-3 rounded-lg font-bold text-base md:text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl hover:from-dark-gold hover:to-gold"
                       >
-                        <span>Shop Now</span>
+                        <span>All Products</span>
                         <FiArrowRight className="w-5 h-5" />
                       </Link>
                     </div>
@@ -138,14 +138,8 @@ const HeroSlider = () => {
               <div className="w-16 h-16 bg-linear-to-r from-gold to-dark-gold rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                 <FiShoppingBag className="w-8 h-8 text-black-custom" />
               </div>
-              <h3 className="text-lg font-bold text-gold mb-2">
-                Free Delivery
-              </h3>
-              <p className="text-xs text-light-silver mb-4">
-                On orders over ৳1000
-              </p>
               <Link to="/all-clothes" className="text-gold text-sm font-semibold hover:text-dark-gold transition-colors">
-                Shop Now →
+                All Products →
               </Link>
             </div>
           </div>

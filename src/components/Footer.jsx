@@ -19,14 +19,14 @@ const Footer = () => {
   return (
     <footer className="bg-black-custom border-t border-dark-gold">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
           {/* Company Info */}
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-linear-to-r from-gold to-dark-gold rounded-xl flex items-center justify-center">
                 <span className="text-2xl font-bold text-black-custom">AS</span>
               </div>
-              <span className="text-2xl font-bold bg-linear-to-r from-gold to-dark-gold bg-clip-text text-transparent">WEAR CO.</span>
+              <span className="text-2xl font-bold bg-linear-to-r from-gold to-dark-gold bg-clip-text text-transparent">EVERYTHINGS SHOP</span>
             </div>
             <p className="text-light-silver leading-relaxed text-sm">
               Your trusted online shopping destination for quality products at great prices. Experience premium shopping with us.
@@ -92,7 +92,8 @@ const Footer = () => {
                 <div>
                   <p className="text-light-silver text-sm leading-relaxed">
                     <span className="font-semibold text-gold">Address:</span><br />
-                    123 Shopping Street, Commerce City, CC 12345
+                    Nakhargonj, Nageswari, Kurigram<br />
+                    Rangpur
                   </p>
                 </div>
               </div>
@@ -103,7 +104,7 @@ const Footer = () => {
                 <div>
                   <p className="text-light-silver text-sm">
                     <span className="font-semibold text-gold">Phone:</span><br />
-                    +8801834189086
+                    +8801791258144
                   </p>
                 </div>
               </div>
@@ -119,33 +120,6 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-bold text-gold mb-6 relative inline-block">
-              Newsletter
-              <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-linear-to-r from-gold to-dark-gold"></span>
-            </h4>
-            <p className="text-light-silver text-sm leading-relaxed">
-              Subscribe to our newsletter for the latest updates and exclusive offers.
-            </p>
-            <form onSubmit={handleNewsletter} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 bg-dark-gray-custom border border-dark-gold rounded-lg text-light-silver placeholder-light-silver/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-3 bg-linear-to-r from-gold to-dark-gold text-black-custom rounded-lg font-semibold hover:from-dark-gold hover:to-gold transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <span>Subscribe</span>
-                <FiSend className="w-4 h-4" />
-              </button>
-            </form>
           </div>
         </div>
 

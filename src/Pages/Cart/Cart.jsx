@@ -238,9 +238,6 @@ const Cart = () => {
                   <span>Delivery Fee</span>
                   <span className="text-gold">FREE</span>
                 </div>
-                <span className="text-xs text-center text-light-silver">
-                  (নীলফামারী শহরের বাইরে হলে ৬০ টাকা)
-                </span>
                 <div className="border-t pt-3">
                   <div className="flex justify-between text-lg font-bold text-gold">
                     <span>Total</span>

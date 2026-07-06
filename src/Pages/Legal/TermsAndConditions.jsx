@@ -14,28 +14,28 @@ const TermsAndConditions = () => {
   const lastUpdated = "February 1, 2026";
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-dark-gray-custom py-8">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-8">
           <Link
             to="/"
-            className="inline-flex items-center mb-6 transition bg-linear-to-r from-green-600 to-orange-500 text-white rounded-lg p-2"
+            className="inline-flex items-center mb-6 transition bg-linear-to-r from-gold to-dark-gold text-black-custom rounded-lg p-2"
           >
             <FiArrowLeft className="mr-2 h-4 w-4" />
             Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-bold text-gold mb-2">
             Terms & Conditions ( শর্তাবলী )
           </h1>
-          <p className="text-gray-600">Last updated: {lastUpdated}</p>
+          <p className="text-light-silver">Last updated: {lastUpdated}</p>
         </div>
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 space-y-8">
+        <div className="bg-black-custom rounded-lg shadow-sm border border-dark-gold p-8 space-y-8">
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiShield className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiShield className="mr-3 h-6 w-6 text-gold" />
               সূচনা (Introduction)
             </h2>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="text-light-silver leading-relaxed">
               AS EVERYTHING SHOP-এ আপনাকে স্বাগতম। এই শর্তাবলি আমাদের ই-কমার্স
               প্ল্যাটফর্ম এবং পরিষেবাগুলোর ব্যবহার নিয়ন্ত্রণ করে। ShopHub
               অ্যাক্সেস বা ব্যবহার করার মাধ্যমে, আপনি এই শর্তাবলি মেনে চলতে
@@ -44,11 +44,11 @@ const TermsAndConditions = () => {
             </p>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiUser className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiUser className="mr-3 h-6 w-6 text-gold" />
               ইউজার অ্যাকাউন্ট (User Accounts)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. অ্যাকাউন্ট তৈরি:</strong> অ্যাকাউন্ট তৈরি করার সময়
                 আপনাকে অবশ্যই সঠিক এবং সম্পূর্ণ তথ্য প্রদান করতে হবে।
@@ -69,11 +69,11 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiTruck className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiTruck className="mr-3 h-6 w-6 text-gold" />
               পণ্য ও সেবা (Products & Services)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. পণ্যের তথ্য:</strong> আমরা পণ্যের সঠিক বিবরণ, মূল্য
                 এবং স্টক বা প্রাপ্যতা নিশ্চিত করার সর্বোচ্চ চেষ্টা করি।
@@ -95,11 +95,11 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiLock className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiLock className="mr-3 h-6 w-6 text-gold" />
               পেমেন্ট ও বিলিং (Payment & Billing)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. পেমেন্ট পদ্ধতি:</strong> বর্তমানে আমরা শুধুমাত্র
                 'ক্যাশ অন ডেলিভারি' (Cash on Delivery) সুবিধা প্রদান করছি। পণ্য
@@ -123,11 +123,11 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiTruck className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiTruck className="mr-3 h-6 w-6 text-gold" />
               শিপিং এবং ডেলিভারি (Shipping & Delivery)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. ডেলিভারি সময়:</strong> অর্ডার নিশ্চিত করার পরবর্তী ৩
                 থেকে ৫ কার্যদিবসের মধ্যে আপনার কাঙ্ক্ষিত পণ্যটি পৌঁছে দেওয়া হবে।
@@ -150,11 +150,11 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiRefreshCw className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiRefreshCw className="mr-3 h-6 w-6 text-gold" />
               রিটার্ন এবং রিফান্ড (Returns & Refunds)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. 🛡️ চেক করার সুযোগ:</strong> পণ্য গ্রহণের সময় ডেলিভারি
                 ম্যানের সামনেই পণ্যটি যাচাই করুন।
@@ -176,10 +176,10 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl font-semibold text-gold mb-4">
               মেধা স্বত্ব (Intellectual Property)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. কন্টেন্ট মালিকানা:</strong> AS EVERYTHING SHOP-এর সকল
                 কন্টেন্ট, লোগো, ইমেজ এবং টেক্সট, AS EVERYTHING SHOP বা তাদের
@@ -197,11 +197,11 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiShield className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiShield className="mr-3 h-6 w-6 text-gold" />
               গোপনীয়তা নীতি (Privacy Policy)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 আপনার গোপনীয়তা আমাদের কাছে অত্যন্ত গুরুত্বপূর্ণ। আপনার ব্যক্তিগত
                 তথ্যের ব্যবহার আমাদের গোপনীয়তা নীতি (Privacy Policy) দ্বারা
@@ -215,10 +215,10 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl font-semibold text-gold mb-4">
               দায়বদ্ধতার সীমাবদ্ধতা (Limitation of Liability)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. পরোক্ষ ক্ষতি:</strong> আমাদের পরিষেবা ব্যবহারের ফলে
                 উদ্ভূত কোনো পরোক্ষ, আনুষঙ্গিক বা বিশেষ ক্ষয়ক্ষতির জন্য SM সহজ
@@ -233,10 +233,10 @@ const TermsAndConditions = () => {
           </section>
           শর্তাবলি পরিবর্তন {/* Changes to Terms */}
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            <h2 className="text-2xl font-semibold text-gold mb-4">
               Changes to Terms
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 <strong>১. সংশোধনের অধিকার:</strong> আমরা যেকোনো সময় এই
                 শর্তাবলি পরিবর্তন, পরিমার্জন বা সংশোধন করার পূর্ণ অধিকার সংরক্ষণ
@@ -254,30 +254,31 @@ const TermsAndConditions = () => {
             </div>
           </section>
           <section>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-              <FiMail className="mr-3 h-6 w-6 text-green-600" />
+            <h2 className="text-2xl font-semibold text-gold mb-4 flex items-center">
+              <FiMail className="mr-3 h-6 w-6 text-gold" />
               যোগাযোগের তথ্য (Contact Information)
             </h2>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-light-silver">
               <p>
                 আমাদের শর্তাবলি বা কোনো অফার (যেমন: প্রথম ১০০০ জনের উপহার)
                 সম্পর্কে বিস্তারিত জানতে সরাসরি আমাদের সাথে যোগাযোগ করুন:
               </p>
-              <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="bg-dark-gray-custom p-4 rounded-lg border border-dark-gold">
                 <p>
                   <strong>Email:</strong> smsahazbuy@gmail.com
                 </p>
                 <p>
-                  <strong>Phone:</strong> +8801834189086
+                  <strong>Phone:</strong> +8801791258144
                 </p>
                 <p>
-                  <strong>Address:</strong> Panchmatha Mor, Nilphamari Sadar
+                  <strong>Address:</strong> Nakhargonj, Nageswari, Kurigram,
+                  Rangpur
                 </p>
               </div>
             </div>
           </section>
         </div>
-        <div className="mt-8 text-center text-gray-600">
+        <div className="mt-8 text-center text-light-silver">
           <p>
             "AS EVERYTHING SHOP ব্যবহার করার মাধ্যমে, আপনি এটি স্বীকার করছেন যে আপনি
             আমাদের এই শর্তাবলি (Terms & Conditions) পড়েছেন, বুঝেছেন এবং এর

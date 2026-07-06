@@ -265,7 +265,7 @@ const TermsAndConditions = () => {
               </p>
               <div className="bg-dark-gray-custom p-4 rounded-lg border border-dark-gold">
                 <p>
-                  <strong>Email:</strong> smsahazbuy@gmail.com
+                  <strong>Email:</strong> aseverythingshop48@gmail.com
                 </p>
                 <p>
                   <strong>Phone:</strong> +8801791258144

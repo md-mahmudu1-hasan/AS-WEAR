@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 
 const ClothesSection = ({ title, products, name, isLoading, totalPages, currentPage, onPageChange }) => {
   return (
-    <section className="mb-14">
+    <section className="pb-14 bg-dark-gray-custom">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-2xl font-bold mb-6 text-gold">{title}</h2>
 
@@ -81,7 +81,7 @@ const AllClothes = () => {
   }, [womenPage]);
 
   return (
-    <div className="min-h-screen bg-dark-gray-custom">
+    <div className="bg-dark-gray-custom">
       <div className="py-14 text-center">
         <h1 className="text-4xl font-bold mb-3 text-gold">All Clothes</h1>
         <p className="text-light-silver">Complete collection for kids, men and women</p>

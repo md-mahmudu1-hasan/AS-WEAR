@@ -268,7 +268,7 @@ const AboutUs = () => {
             </h2>
             <div className="bg-dark-gray-custom p-4 rounded-lg border border-dark-gold">
               <p className="text-light-silver">
-                <strong className="text-gold">Email:</strong> smsahazbuy@gmail.com
+                <strong className="text-gold">Email:</strong> aseverythingshop48@gmail.com
               </p>
               <p className="text-light-silver">
                 <strong className="text-gold">Phone:</strong> +8801791258144

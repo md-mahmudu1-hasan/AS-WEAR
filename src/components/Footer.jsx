@@ -115,7 +115,7 @@ const Footer = () => {
                 <div>
                   <p className="text-light-silver text-sm">
                     <span className="font-semibold text-gold">Email:</span><br />
-                    smsahazbuy@gmail.com
+                    aseverythingshop48@gmail.com
                   </p>
                 </div>
               </div>

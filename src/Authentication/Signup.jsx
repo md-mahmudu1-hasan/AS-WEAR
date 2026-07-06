@@ -87,7 +87,7 @@ const Signup = () => {
             Create Account
           </h2>
           <p className="text-light-silver">
-            Join SM বাজার for exclusive deals and offers
+            Join AS Everything shop for exclusive deals and offers
           </p>
         </div>
 

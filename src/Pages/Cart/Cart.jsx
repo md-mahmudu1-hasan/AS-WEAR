@@ -160,7 +160,7 @@ const Cart = () => {
                         >
                           <FiMinus className="w-4 h-4" />
                         </button>
-                        <span className="w-12 text-center font-semibold">
+                        <span className="w-12 text-center font-semibold text-gold">
                           {item.quantity}
                         </span>
                         <button

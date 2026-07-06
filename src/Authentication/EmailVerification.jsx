@@ -183,7 +183,7 @@ const EmailVerification = () => {
           {/* Resend Code */}
           <div className="mt-6 text-center">
             <p className="text-sm text-light-silver mb-2">
-              Didn't receive the code?
+              Check in spam folder first. Didn't receive the code?
             </p>
           </div>
 

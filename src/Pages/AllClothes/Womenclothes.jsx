@@ -291,17 +291,43 @@ const WomensClothesDetails = () => {
                     )}
                   </select>
                 </div>
-                <button
-                  onClick={handleAddToCart}
-                  disabled={clothesdetails.stock === 0}
-                  className={`flex-1 sm:flex-none px-8 py-3 rounded-lg font-semibold transition-all ${
-                    clothesdetails.stock > 0
-                      ? "bg-linear-to-r from-gold to-dark-gold text-black-custom hover:from-dark-gold hover:to-gold hover:-translate-y-1 shadow-lg"
-                      : "bg-dark-gray-custom text-light-silver cursor-not-allowed"
-                  }`}
-                >
-                  {clothesdetails.stock > 0 ? "Add to Cart" : "Out of Stock"}
-                </button>
+                <div className="flex flex-col gap-4 md:flex-row">
+                  {/* button1 */}
+                  <button
+                    onClick={handleAddToCart}
+                    disabled={clothesdetails.stock === 0}
+                    className={`flex-1 sm:flex-none px-8 py-3 rounded-lg font-semibold transition-all ${
+                      clothesdetails.stock > 0
+                        ? "bg-linear-to-r from-gold to-dark-gold text-black-custom hover:from-dark-gold hover:to-gold hover:-translate-y-1 shadow-lg"
+                        : "bg-dark-gray-custom text-light-silver cursor-not-allowed border border-dark-gold"
+                    }`}
+                  >
+                    {clothesdetails.stock > 0 ? "Add to Cart" : "Out of Stock"}
+                  </button>
+
+                  {/* button2 */}
+
+                  <button
+                    onClick={() => {
+                      if (quantity > clothesdetails.stock) {
+                        toast.error("Stock limit exceeded");
+                        return;
+                      }
+
+                      addToCart(clothesdetails, quantity);
+                      toast.success("Added to Cart");
+                      navigate("/cart");
+                    }}
+                    disabled={clothesdetails.stock === 0}
+                    className={`flex-1 sm:flex-none px-8 py-3 rounded-lg font-semibold transition-all ${
+                      clothesdetails.stock > 0
+                        ? "bg-white/50 hover:bg-white/70 hover:-translate-y-1 shadow-lg"
+                        : "bg-dark-gray-custom text-light-silver cursor-not-allowed border border-dark-gold"
+                    }`}
+                  >
+                    {clothesdetails.stock > 0 ? "Buy Now" : "Out of Stock"}
+                  </button>
+                </div>
               </div>
 
               <div>

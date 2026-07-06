@@ -16,13 +16,14 @@ import Loader from "../../components/Loader";
 import toast from "react-hot-toast";
 
 const Cart = () => {
-  const { cart, setCart, removeFromCart, increaseQty, decreaseQty } = useCart();
+  const { cart,removeFromCart, increaseQty, decreaseQty } = useCart();
   const [userAddress, setUserAddress] = useState(null);
   const [loading, setLoading] = useState(true);
   const [orderLoading, setOrderLoading] = useState(false);
   const { user } = useAuth();
   const axiosInstance = useAxios();
   const navigate = useNavigate();
+  
   useEffect(() => {
     const fetchAddress = async () => {
       try {
@@ -34,7 +35,6 @@ const Cart = () => {
           );
           setUserAddress(res?.data || {});
         } else {
-          // guest user হলে empty address set
           setUserAddress(null);
         }
       } catch (error) {
@@ -52,28 +52,8 @@ const Cart = () => {
     if (!userAddress) {
       return toast.error("Please add delivery address");
     }
-
-    const orderData = {
-      userEmail: user?.email,
-      userName: userAddress?.name,
-      cart,
-      total: getSubtotal(),
-      address: userAddress?.address,
-      phone: userAddress?.phone,
-    };
-
-    try {
-      setOrderLoading(true);
-      await axiosInstance.post("/order-confirm", orderData);
-      toast.success("Order confirmed! Check your Gmail");
-      navigate("/profile");
-      setCart([]);
-      localStorage.removeItem("cart");
-    } catch {
-      toast.error("Order failed");
-    } finally {
-      setOrderLoading(false);
-    }
+    toast.success("Redirecting to payment page");
+    navigate("/payment");
   };
 
   const getSubtotal = () => {
@@ -146,7 +126,7 @@ const Cart = () => {
               >
                 <div className="flex items-center space-x-4">
                   {/* Product Image */}
-                  <div className="w-24 h-24 bg-dark-gray-custom rounded-lg overflow-hidden flex-shrink-0">
+                  <div className="w-24 h-24 bg-dark-gray-custom rounded-lg overflow-hidden shrink-0">
                     <img
                       src={item.images[0]}
                       alt={item.title}
@@ -268,20 +248,6 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Promo Code
-              <div className="mb-6">
-                <div className="flex space-x-2">
-                  <input
-                    type="text"
-                    placeholder="Enter promo code"
-                    className="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  />
-                  <button className="px-6 py-3 bg-linear-to-r from-orange-500 to-orange-600 text-white font-medium hover:from-orange-600 hover:to-orange-700 transition-all">
-                    Apply
-                  </button>
-                </div>
-              </div> */}
 
               {/* Action Buttons */}
               <div className="space-y-3">

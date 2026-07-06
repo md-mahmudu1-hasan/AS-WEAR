@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router';
-import { FiMapPin, FiPhone, FiMail, FiFacebook, FiTwitter, FiInstagram } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiMail, FiFacebook, FiTwitter, FiInstagram, FiSend } from 'react-icons/fi';
+import toast from 'react-hot-toast';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleNewsletter = (e) => {
+    e.preventDefault();
+    if (email) {
+      toast.success('Thank you for subscribing!');
+      setEmail('');
+    } else {
+      toast.error('Please enter your email');
+    }
+  };
+
   return (
-    <footer className="bg-dark-gray-custom border-t border-dark-gold">
+    <footer className="bg-black-custom border-t border-dark-gold">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="space-y-6">
             <div className="flex items-center space-x-3">
-              <img src="/logo.png" alt="ShopHub Logo" className="w-12 h-12" />
-              <span className="text-2xl font-bold bg-linear-to-r from-gold to-dark-gold bg-clip-text text-transparent">AS WEAR CO.</span>
+              <div className="w-12 h-12 bg-linear-to-r from-gold to-dark-gold rounded-xl flex items-center justify-center">
+                <span className="text-2xl font-bold text-black-custom">AS</span>
+              </div>
+              <span className="text-2xl font-bold bg-linear-to-r from-gold to-dark-gold bg-clip-text text-transparent">WEAR CO.</span>
             </div>
             <p className="text-light-silver leading-relaxed text-sm">
               Your trusted online shopping destination for quality products at great prices. Experience premium shopping with us.
@@ -52,6 +67,12 @@ const Footer = () => {
                 <Link to="/terms" className="text-light-silver hover:text-gold transition-colors duration-300 flex items-center group">
                   <span className="w-1.5 h-1.5 bg-dark-gold rounded-full mr-3 group-hover:bg-gold transition-colors"></span>
                   Terms & Conditions
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-light-silver hover:text-gold transition-colors duration-300 flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-dark-gold rounded-full mr-3 group-hover:bg-gold transition-colors"></span>
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
@@ -99,13 +120,40 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          {/* Newsletter */}
+          <div className="space-y-6">
+            <h4 className="text-lg font-bold text-gold mb-6 relative inline-block">
+              Newsletter
+              <span className="absolute -bottom-2 left-0 w-12 h-0.5 bg-linear-to-r from-gold to-dark-gold"></span>
+            </h4>
+            <p className="text-light-silver text-sm leading-relaxed">
+              Subscribe to our newsletter for the latest updates and exclusive offers.
+            </p>
+            <form onSubmit={handleNewsletter} className="space-y-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="w-full px-4 py-3 bg-dark-gray-custom border border-dark-gold rounded-lg text-light-silver placeholder-light-silver/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-all"
+              />
+              <button
+                type="submit"
+                className="w-full px-4 py-3 bg-linear-to-r from-gold to-dark-gold text-black-custom rounded-lg font-semibold hover:from-dark-gold hover:to-gold transition-all duration-300 flex items-center justify-center space-x-2"
+              >
+                <span>Subscribe</span>
+                <FiSend className="w-4 h-4" />
+              </button>
+            </form>
+          </div>
         </div>
 
         {/* Footer Bottom */}
         <div className="border-t border-dark-gold pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-light-silver text-sm">
-              &copy; {new Date().getFullYear()} AS WEAR CO.. All rights reserved.
+              &copy; {new Date().getFullYear()} AS EVERYTHING SHOP. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-light-silver hover:text-gold transition-colors duration-300">Privacy Policy</Link>

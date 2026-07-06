@@ -34,7 +34,7 @@ const AboutUs = () => {
             Back to Home
           </Link>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
-            About AS WEAR CO.
+            About AS EVERYTHING SHOP
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl">
             আপনার ফ্যাশন ও আস্থার নির্ভরযোগ্য ঠিকানা। অনলাইন ও অফলাইনে মানসম্মত
@@ -206,11 +206,11 @@ const AboutUs = () => {
                 পাচ্ছেন আমাদের আউটলেটে।"
               </p>
               <div className="bg-gray-50 p-4 rounded-lg space-y-3">
-                <p><strong>শোরুমের ঠিকানা:</strong> AS WEAR CO. Rafi Taders পাঁচমাথা মোড়, নীলফামারী সদর</p>
+                <p><strong>শোরুমের ঠিকানা:</strong> AS EVERYTHING SHOP Rafi Taders পাঁচমাথা মোড়, নীলফামারী সদর</p>
                 <p><strong>সরাসরি কেনাকাটার সুবিধা:</strong> আমাদের শোরুমে এসে আপনি প্রতিটি পোশাকের কাপড় সরাসরি স্পর্শ করে মান যাচাই করতে পারবেন এবং ট্রায়াল দিয়ে নিজের সাইজ নিশ্চিত করে কিনতে পারবেন।</p>
                 <p><strong>সময়সূচী:</strong> প্রতিদিন সকাল ১০:০০ টা থেকে রাত ১২:০০ টা পর্যন্ত আমাদের শোরুম খোলা থাকে।</p>
                 <p><strong>যোগাযোগ:</strong> 01731965985</p>
-                <p><strong>গুগল ম্যাপ লোকেশন:</strong> AS WEAR CO. Rafi Taders পাঁচমাথা মোড়, নীলফামারী সদর</p>
+                <p><strong>গুগল ম্যাপ লোকেশন:</strong> AS EVERYTHING SHOP Rafi Taders পাঁচমাথা মোড়, নীলফামারী সদর</p>
               </div>
             </div>
           </section> */}
@@ -261,7 +261,7 @@ const AboutUs = () => {
         {/* Footer */}
         <div className="mt-8 text-center text-gray-600">
           <p>
-            "AS WEAR CO.-এর সাথে থাকার জন্য ধন্যবাদ। আমরা আপনার আস্থার মর্যাদা 
+            "AS EVERYTHING SHOP-এর সাথে থাকার জন্য ধন্যবাদ। আমরা আপনার আস্থার মর্যাদা 
             দিতে প্রতিশ্রুতিবদ্ধ এবং সর্বোত্তম সেবা প্রদানে নিবেদিত।"
           </p>
         </div>

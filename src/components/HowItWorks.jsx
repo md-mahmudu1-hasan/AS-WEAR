@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiSearch, FiShoppingCart, FiCheckCircle, FiTruck } from 'react-icons/fi';
 
 const HowItWorks = () => {
   const steps = [
@@ -6,64 +7,60 @@ const HowItWorks = () => {
       id: 1,
       title: "Browse Products",
       description: "Explore our wide range of products across various categories",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="11" cy="11" r="8"/>
-          <path d="m21 21-4.35-4.35"/>
-        </svg>
-      )
+      icon: <FiSearch className="w-8 h-8" />
     },
     {
       id: 2,
       title: "Add to Cart",
       description: "Select your favorite products and add them to your shopping cart",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <circle cx="9" cy="21" r="1"/>
-          <circle cx="20" cy="21" r="1"/>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-        </svg>
-      )
+      icon: <FiShoppingCart className="w-8 h-8" />
     },
     {
       id: 3,
-      title: "Conferm Order",
-      description: "Conferm your order and Check your email for order confirmation",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <rect width="20" height="14" x="2" y="5" rx="2"/>
-          <path d="M2 10h20"/>
-        </svg>
-      )
+      title: "Confirm Order",
+      description: "Confirm your order and check your email for order confirmation",
+      icon: <FiCheckCircle className="w-8 h-8" />
     },
     {
       id: 4,
       title: "Fast Delivery",
       description: "Receive your products at your doorstep with our fast delivery service",
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M5 12h14"/>
-          <path d="M12 5l7 7-7 7"/>
-        </svg>
-      )
+      icon: <FiTruck className="w-8 h-8" />
     }
   ];
 
   return (
     <section className="py-16 bg-dark-gray-custom">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gold mb-12">How It Works</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <span className="inline-block px-4 py-2 bg-gold/10 text-gold rounded-full text-sm font-semibold mb-4">
+                Simple Process
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gold mb-4">How It Works</h2>
+          <p className="text-light-silver max-w-2xl mx-auto">
+                Get your favorite products in just 4 simple steps
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
-            <div key={step.id} className="text-center p-8 bg-black-custom rounded-xl hover:bg-dark-gray-custom transition-all duration-300 hover:-translate-y-2 hover:shadow-lg relative">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-gold text-black-custom rounded-full flex items-center justify-center font-bold text-sm">
+            <div key={step.id} className="text-center p-6 bg-black-custom rounded-2xl hover:bg-dark-gray-custom transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-dark-gold relative group">
+              {/* Step Number */}
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-linear-to-r from-gold to-dark-gold text-black-custom rounded-full flex items-center justify-center font-bold text-sm shadow-lg group-hover:scale-110 transition-transform">
                 {index + 1}
               </div>
-              <div className="text-gold mb-6 flex justify-center">
+              
+              {/* Icon */}
+              <div className="w-16 h-16 mx-auto mb-4 bg-linear-to-br from-dark-gray-custom to-black-custom rounded-2xl flex items-center justify-center text-gold border border-dark-gold group-hover:border-gold group-hover:from-gold/10 group-hover:to-dark-gold/10 transition-all duration-300">
                 {step.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gold mb-4">{step.title}</h3>
-              <p className="text-light-silver leading-relaxed">{step.description}</p>
+              
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-gold mb-2">{step.title}</h3>
+              
+              {/* Description */}
+              <p className="text-light-silver text-sm leading-relaxed">{step.description}</p>
             </div>
           ))}
         </div>

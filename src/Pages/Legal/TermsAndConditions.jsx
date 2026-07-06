@@ -36,7 +36,7 @@ const TermsAndConditions = () => {
               সূচনা (Introduction)
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              AS WEAR CO.-এ আপনাকে স্বাগতম। এই শর্তাবলি আমাদের ই-কমার্স
+              AS EVERYTHING SHOP-এ আপনাকে স্বাগতম। এই শর্তাবলি আমাদের ই-কমার্স
               প্ল্যাটফর্ম এবং পরিষেবাগুলোর ব্যবহার নিয়ন্ত্রণ করে। ShopHub
               অ্যাক্সেস বা ব্যবহার করার মাধ্যমে, আপনি এই শর্তাবলি মেনে চলতে
               সম্মত হচ্ছেন। আপনি যদি এই শর্তাবলির কোনো অংশের সাথে একমত না হন,
@@ -181,8 +181,8 @@ const TermsAndConditions = () => {
             </h2>
             <div className="space-y-3 text-gray-700">
               <p>
-                <strong>১. কন্টেন্ট মালিকানা:</strong> AS WEAR CO.-এর সকল
-                কন্টেন্ট, লোগো, ইমেজ এবং টেক্সট, AS WEAR CO. বা তাদের
+                <strong>১. কন্টেন্ট মালিকানা:</strong> AS EVERYTHING SHOP-এর সকল
+                কন্টেন্ট, লোগো, ইমেজ এবং টেক্সট, AS EVERYTHING SHOP বা তাদের
                 লাইসেন্সকারীদের মালিকানাধীন।
               </p>
               <p>
@@ -191,8 +191,8 @@ const TermsAndConditions = () => {
                 না।
               </p>
               <p>
-                <strong>৩. ট্রেডমার্ক:</strong> AS WEAR CO. এবং সম্পর্কিত
-                চিহ্নগুলি AS WEAR CO.-এর ট্রেডমার্ক।
+                <strong>৩. ট্রেডমার্ক:</strong> AS EVERYTHING SHOP এবং সম্পর্কিত
+                চিহ্নগুলি AS EVERYTHING SHOP-এর ট্রেডমার্ক।
               </p>
             </div>
           </section>
@@ -208,7 +208,7 @@ const TermsAndConditions = () => {
                 নিয়ন্ত্রিত।
               </p>
               <p>
-                AS WEAR CO. ব্যবহার করার মাধ্যমে, আপনি আমাদের গোপনীয়তা নীতিতে
+                AS EVERYTHING SHOP ব্যবহার করার মাধ্যমে, আপনি আমাদের গোপনীয়তা নীতিতে
                 বর্ণিত তথ্যের সংগ্রহ এবং ব্যবহারের বিষয়ে আপনার সম্মতি প্রদান
                 করছেন।
               </p>
@@ -279,7 +279,7 @@ const TermsAndConditions = () => {
         </div>
         <div className="mt-8 text-center text-gray-600">
           <p>
-            "AS WEAR CO. ব্যবহার করার মাধ্যমে, আপনি এটি স্বীকার করছেন যে আপনি
+            "AS EVERYTHING SHOP ব্যবহার করার মাধ্যমে, আপনি এটি স্বীকার করছেন যে আপনি
             আমাদের এই শর্তাবলি (Terms & Conditions) পড়েছেন, বুঝেছেন এবং এর
             দ্বারা দায়বদ্ধ থাকতে সম্মত হয়েছেন।"
           </p>

@@ -66,7 +66,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-dark-gray-custom to-dark-gray-custom flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-black-custom flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full space-y-8">
         {/* Header */}
         <div className="text-center">
@@ -265,7 +265,7 @@ const Login = () => {
         {/* Footer */}
         <div className="text-center text-sm text-light-silver">
           <p>
-            &copy; {new Date().getFullYear()} AS WEAR CO.. All rights reserved.
+            &copy; {new Date().getFullYear()} AS EVERYTHING SHOP. All rights reserved.
           </p>
         </div>
       </div>

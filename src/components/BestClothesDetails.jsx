@@ -283,6 +283,8 @@ const BestClothesDetails = () => {
                     )}
                   </select>
                 </div>
+                <div className="flex flex-col gap-4 md:flex-row">
+                  {/* button1 */}
                   <button
                     onClick={() => {
                       if (quantity > clothesdetails.stock) {
@@ -302,6 +304,30 @@ const BestClothesDetails = () => {
                   >
                     {clothesdetails.stock > 0 ? "Add to Cart" : "Out of Stock"}
                   </button>
+
+                  {/* button2 */}
+
+                  <button
+                    onClick={() => {
+                      if (quantity > clothesdetails.stock) {
+                        toast.error("Stock limit exceeded");
+                        return;
+                      }
+
+                      addToCart(clothesdetails, quantity);
+                      toast.success("Added to Cart");
+                      navigate("/cart");
+                    }}
+                    disabled={clothesdetails.stock === 0}
+                    className={`flex-1 sm:flex-none px-8 py-3 rounded-lg font-semibold transition-all ${
+                      clothesdetails.stock > 0
+                        ? "bg-white/50 hover:bg-white/70 hover:-translate-y-1 shadow-lg"
+                        : "bg-dark-gray-custom text-light-silver cursor-not-allowed border border-dark-gold"
+                    }`}
+                  >
+                    {clothesdetails.stock > 0 ? "Buy Now" : "Out of Stock"}
+                  </button>
+                </div>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gold mb-3">
@@ -323,9 +349,7 @@ const BestClothesDetails = () => {
         {/* Reviews Section */}
         <div className="bg-black-custom rounded-xl shadow-lg p-4 sm:p-8 border border-dark-gold">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8">
-            <h2 className="text-2xl font-bold text-gold">
-              Customer Reviews
-            </h2>
+            <h2 className="text-2xl font-bold text-gold">Customer Reviews</h2>
             <div className="flex items-center gap-6 sm:gap-8">
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl font-bold text-gold">

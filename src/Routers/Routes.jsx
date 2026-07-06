@@ -20,6 +20,7 @@ import KidsClothesDetails from "../Pages/AllClothes/KidsClothes";
 import MensClothesDetails from "../Pages/AllClothes/MensClothes";
 import WomensClothesDetails from "../Pages/AllClothes/Womenclothes";
 import PrivetRoute from "../Authentication/Privetroute/Privetroute";
+import Payment from "../Pages/Payments/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
       {
         path: "mensclothes/:id",
         element: <MensClothesDetails></MensClothesDetails>,
+      },
+      {
+        path: "/payment",
+        element: <Payment></Payment>,
       },
     ],
     errorElement: <NotFound />,

@@ -47,7 +47,7 @@ const Navbar = () => {
           {/* Desktop Search Box */}
           <div className="hidden md:flex">
             <div className="relative w-125">
-              <div className="flex items-center bg-dark-gray-custom/90 backdrop-blur rounded-lg overflow-hidden">
+              <div className="flex items-center bg-dark-gray-custom/90 backdrop-blur rounded-lg overflow-hidden border border-dark-gold">
                 <input
                   type="text"
                   placeholder="Search for Clothes..."
@@ -141,7 +141,7 @@ const Navbar = () => {
 
         {/* Mobile Search */}
         <div className="md:hidden mt-4 relative">
-          <div className="flex items-center bg-dark-gray-custom/90 backdrop-blur rounded-lg overflow-hidden">
+          <div className="flex items-center bg-dark-gray-custom/90 backdrop-blur rounded-lg overflow-hidden border border-dark-gold">
             <input
               type="text"
               placeholder="Search for Clothes..."
